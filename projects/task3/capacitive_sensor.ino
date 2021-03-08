@@ -43,7 +43,7 @@ void setup() {
 void loop() {
   long sensorValue = capSensor.capacitiveSensor(sensorSamples);
 
-  // Map the sensor value to a analog output value based on the min/max values calculated from setup
+  // Map the sensor value to an analog output value based on the min/max values calculated from setup
   int ledOutput = map(sensorValue, minValue, maxValue, 0, 255);
 
   // Make sure that output value does not surpass analogue limits, this can happen when the sensor gives a value outside min/max values

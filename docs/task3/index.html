@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Elektronikk of Arduino - Edward 2021V</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="/index.html" class="logo"><strong>DigiFab 2021V</strong> - Edward Langstrand</a>
+                </header>
+
+                <!-- Content -->
+                <article>
+                    <header class="main">
+                        <h1>Oppgave 3 - Elektronikk of Arduino</h1>
+                    </header>
+
+                    <section>
+                        <h2>Demonstrasjon</h2>
+                        <video width="50%" controls>
+                            <source src="demonstration.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </section>
+
+                    <section>
+                        <h2>Forklaring</h2>
+                        <p>
+                            Jeg har tatt utgangspunkt i prosjekt 13 "Touchy-feely lamp" som står i Arduino
+                            prosjektboken. Den beskriver en krets med en kapasitans-sensor som skrur av og på et led-lys
+                            når noen tar på sensoren. Forskjellen i mitt prosjekt er at output til led-lampen er
+                            dynamisk basert på hvor mye kapasitans-sensoren måler. Dette gir hovedsakelig forskjell i
+                            programkoden.
+                        </p>
+                        <p>
+                            Når programmet starter så kjører det en oppsetts-fase hvor maksimum og minimum verdiene til
+                            sensoren måles, i denne fasen må brukeren ta på sensoren og slippe innen tiden er ute (I
+                            ettertid innser jeg at minimumsverdien kanskje er unødvendig å måle da den virker alltid å
+                            være 0). Disse verdiene blir brukt for å determinere spenningen
+                            som skal gå til led-dioden. Metoden jeg brukte for å gjøre dette er å kartlegge sensor
+                            verdien mellom minimum og maksimum sensor verdiene, til minimum og maksimum analog output.
+                            Resultatet blir da at led-lyset vil ha styrke basert på hvor hardt noen tar på sensoren.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Krets-oppbygging</h2>
+                        <img class="image" src="overview.jpg" width="50%">
+                        <p>
+                            Kretsen er lagt opp nesten som prosjektet i boken. Send pin til kapasitans sensoren er 4,
+                            og mottaker pin er 2. Disse er koblet sammen med en kraftig resistor og en ledning som
+                            leder til aluminiumsfolie. Led pin utgangen har jeg flyttet til 13 for å få mulighet til
+                            analog
+                            output, slik at led-lyset kan ha variabel styrke.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Kode</h2>
+                        <p>
+                            Biblioteket CapactiveSensor er inkludert slik at to pinner kan brukes til å måle kapasistans
+                            i kretsen.
+                        </p>
+                        <p>Koden finner du <a
+                                href="https://github.com/SizzleBae/sizzlebae.github.io/blob/master/projects/task3/capacitive_sensor.ino">her</a>.
+                        </p>
+                    </section>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Meny</h2>
+                    </header>
+                    <ul>
+                        <li><a href="/index.html">Om meg</a></li>
+                        <li><a href="/task2/index.html">Fusion 360 / InkScape</a></li>
+                        <li><a href="/task3/index.html">Elektronikk og Arduino</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
