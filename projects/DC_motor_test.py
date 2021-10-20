@@ -1,6 +1,8 @@
-#    C2Plabs.com
+#  Source: C2Plabs.com
+#       https://c2plabs.com/blog/2019/06/22/dc-motor-control-using-tb6612fng-driver-and-raspberry-pi-gpiozero-lib/
 #
-#
+# Modified slightly for testing
+# Changed GPIO pins and removed console input reading for switching motor direction
 
 from gpiozero import PWMOutputDevice
 from gpiozero import DigitalOutputDevice
